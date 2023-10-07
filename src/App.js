@@ -1,4 +1,7 @@
 import React from "react";
+import Consulting from './assets/Consulting.png'
+import arrow from './assets/arrowRight.svg'
+
 import {
   Container,
   H1,
@@ -14,19 +17,17 @@ function App() {
 
 return (
   <Container>
-      <Img />
+      <Img alt="logo-imagem" src={Consulting} />
       <Itens>
         <H1>Olá</H1>
 
         <LabelInput>Nome</LabelInput>
-        <input placeholder="Nome" />
+        <Input placeholder="Nome" />
 
         <LabelInput>Idade</LabelInput>
         <Input placeholder="Idade" />
 
-        <Button>
-            Cadastrar 
-        </Button>
+        <Button> Cadastrar <img alt="seta" src={arrow}/> </Button>
       </Itens>
   </Container>
   );
