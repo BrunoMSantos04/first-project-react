@@ -11,7 +11,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 100vh;
+    height: 140vh;
 `;
 
 export const Img = styled.img`
@@ -26,7 +26,7 @@ export const Itens = styled.div`
     padding: 50px 36px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 150vh;
 `;
 
 export const H1 = styled.h1`
@@ -83,4 +83,46 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     gap: 12px;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &:active{
+        opacity: 0.5;
+    }
+`;
+
+export const User = styled.li`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 24px;
+    width: 342px;
+    height: 58px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    outline: none;
+
+p{
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+
+button{
+    background: none;
+    cursor: pointer;
+    width: 24px;
+    height: 28px;
+    flex-shrink: 0;
+    border: none;
+    outline: none;
+}
+
+
 `;

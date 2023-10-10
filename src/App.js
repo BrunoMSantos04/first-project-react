@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import Consulting from './assets/Consulting.png'
 import arrow from './assets/arrowRight.svg'
+import trash from './assets/bin.png'
 
 import {
   Container,
@@ -9,11 +10,17 @@ import {
   Itens,
   LabelInput,
   Input,
-  Button
+  Button,
+  User
 } from './styles';
 
 //JSX
 function App() {
+  const [users, setUsers] = useState([])
+
+function addNewUser() {
+  setUsers([{id: Math.random(), name:"Bruno", age: 19}])
+}
 
 return (
   <Container>
@@ -27,7 +34,18 @@ return (
         <LabelInput>Idade</LabelInput>
         <Input placeholder="Idade" />
 
-        <Button> Cadastrar <img alt="seta" src={arrow}/> </Button>
+        <Button onClick={addNewUser} > 
+          Cadastrar <img alt="Arrow" src={arrow}/>         
+        </Button>
+
+        <ul>
+          {users.map((user) => (
+            <User key={user.id}>
+             <p> {user.name}</p><p>{user.age}</p>
+             <button> <img alt="trashbin" src={trash} /> </button>
+            </User>
+          ))}
+        </ul>
       </Itens>
   </Container>
   );
