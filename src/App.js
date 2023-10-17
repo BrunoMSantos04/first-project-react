@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import Consulting from './assets/Consulting.png'
 import arrow from './assets/arrowRight.svg'
 import trash from './assets/bin.png'
@@ -17,22 +17,31 @@ import {
 //JSX
 function App() {
   const [users, setUsers] = useState([])
+  const inputName = useRef()
+  const inputAge = useRef()
+
 
 function addNewUser() {
-  setUsers([{id: Math.random(), name:"Bruno", age: 19}])
+  setUsers([...users,{id: Math.random(), name: inputName.current.value, age: inputAge.current.value}])
+
+}
+
+function deleteUser (userId) {
+    const newUsers = users.filter(user => user.id !== userId)
+    setUsers(newUsers)
 }
 
 return (
   <Container>
-      <Img alt="logo-imagem" src={Consulting} />
+      <Img alt="logo-img" src={Consulting} />
       <Itens>
         <H1>Olá</H1>
 
         <LabelInput>Nome</LabelInput>
-        <Input placeholder="Nome" />
+        <Input ref={inputName} placeholder="Nome" />
 
         <LabelInput>Idade</LabelInput>
-        <Input placeholder="Idade" />
+        <Input ref={inputAge} placeholder="Idade" />
 
         <Button onClick={addNewUser} > 
           Cadastrar <img alt="Arrow" src={arrow}/>         
@@ -41,8 +50,13 @@ return (
         <ul>
           {users.map((user) => (
             <User key={user.id}>
+
              <p> {user.name}</p><p>{user.age}</p>
-             <button> <img alt="trashbin" src={trash} /> </button>
+
+             <button onClick={() => deleteUser(user.id)} > 
+              <img alt="trashbin" src={trash} /> 
+            </button>
+
             </User>
           ))}
         </ul>
