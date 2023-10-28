@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import bg1 from './assets/bg image1.svg'
-import bg2 from './assets/bg image2.svg'
+//import bg2 from './assets/bg image2.svg'
 
 
 
