@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import Avatar from '../../assets/UserProfile.png'
@@ -18,7 +19,11 @@ import {
 function Users() {
   const [users, setUsers] = useState([])
 
+  const navigate = useNavigate()
 
+  function goBackPage(){
+    navigate("/")
+  }
 
   useEffect(() => {
       async function fetchUsers(){
@@ -54,7 +59,7 @@ function Users() {
             ))}
           </ul>
 
-          <Button to="/" > 
+          <Button onClick={goBackPage} > 
             <img alt="Arrow" src={arrow}/>  Voltar        
           </Button>
 
