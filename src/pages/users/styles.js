@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import bg2 from '../../assets/bg image2.svg'
-
+import { Link } from 'react-router-dom'
 
 
 export const Container = styled.div`
@@ -40,7 +40,7 @@ export const H1 = styled.h1`
 `;
 
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     width: 342px;
     height: 74px;
     margin-top: 120px;

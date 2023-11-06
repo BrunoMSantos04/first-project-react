@@ -54,7 +54,7 @@ function Users() {
             ))}
           </ul>
 
-          <Button  > 
+          <Button to="/" > 
             <img alt="Arrow" src={arrow}/>  Voltar        
           </Button>
 
