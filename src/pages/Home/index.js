@@ -1,4 +1,5 @@
 import React, {useState, useRef} from "react";
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import Consulting from '../../assets/Consulting.png'
@@ -20,6 +21,7 @@ function App() {
   const inputName = useRef()
   const inputAge = useRef()
 
+  const navigate = useNavigate()
 
   async function addNewUser() {
     const {data: newUser} = await axios.post("http://localhost:3001/users", 
@@ -30,6 +32,8 @@ function App() {
 
         console.log(newUser)
     setUsers([...users, newUser]) 
+
+   navigate("/usuarios") 
 }
 
 

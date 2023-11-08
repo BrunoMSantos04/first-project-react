@@ -9,7 +9,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 140vh;
+    height: 100%;
+    min-height: 100vh - 170px;
 `;
 
 export const Img = styled.img`
