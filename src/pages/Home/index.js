@@ -5,14 +5,15 @@ import axios from 'axios'
 import Consulting from '../../assets/Consulting.png'
 import arrow from '../../assets/arrowRight.svg'
 
+import H1 from '../../components/Title'
+import Itens from '../../components/containerItens'
+import Button from '../../components/Button'
+
 import {
   Container,
-  H1,
   Img,
-  Itens,
   LabelInput,
   Input,
-  Button,
 } from './styles';
 
 //JSX

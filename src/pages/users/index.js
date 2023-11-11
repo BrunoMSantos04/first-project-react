@@ -2,16 +2,17 @@ import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+import H1 from '../../components/Title'
+import Itens from '../../components/containerItens'
+import Button from '../../components/Button'
+
 import Avatar from '../../assets/UserProfile.png'
 import arrow from '../../assets/arrowRight.svg'
 import trash from '../../assets/bin.png'
 
 import {
   Container,
-  H1,
   Img,
-  Itens,
-  Button,
   User
 } from './styles';
 
@@ -42,7 +43,7 @@ function Users() {
   return (
     <Container>
         <Img alt="logo-img" src={Avatar} />
-        <Itens>
+        <Itens IsBlur={true}>
           <H1>Usuários</H1>
           
           <ul>
@@ -59,7 +60,7 @@ function Users() {
             ))}
           </ul>
 
-          <Button onClick={goBackPage} > 
+          <Button reverseArrow={true} onClick={goBackPage} > 
             <img alt="Arrow" src={arrow}/>  Voltar        
           </Button>
 
